@@ -1,5 +1,5 @@
 <?php 
-$accessToken = 'Line Developersで発行したアクセストークン'; 
+$accessToken = 'Y4O+Ps//15cLCZV5cdvmSJb2LvSRr/zuaoTzd5S3y68UVpRDRf93kGdjH9LTc1eY3woKa4DucQZ/MktViQQRebdWAPxrNoCp9F888RcdUipE87Va17h7d1ao+cJ0V9kaQDVSXSlBaOpWv0ximF9qSwdB04t89/1O/w1cDnyilFU='; 
 $jsonString = file_get_contents('php://input'); error_log($jsonString); 
 $jsonObj = json_decode($jsonString); $message = $jsonObj->{"events"}[0]->{"message"}; 
 $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
