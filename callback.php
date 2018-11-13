@@ -67,7 +67,7 @@ if ($message->{"text"} == 'あいさつ') {
                 ],
                  [ 
                         'title' => 'カルーセル2', 
-                        'text' => 'カルーセル2です', 
+                        'text' => 'カルーセル2ですう', 
                         'actions' => [ 
                             [
                                 'type' => 'postback', 
