@@ -6,12 +6,12 @@ $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 
 
  // 送られてきたメッセージの中身からレスポンスのタイプを選択 
-if ($message->{"text"} == '確認') {
+if ($message->{"text"} == 'あいさつ') {
      // 確認ダイアログタイプ 
     $messageData = [ 
         'type' => 'template', 
         'altText' => '確認ダイアログ', 
-        'template' => [ 'type' => 'confirm', 'text' => '元気ですかー？', 
+        'template' => [ 'type' => 'confirm', 'text' => 'あなたのインナーチャイルド、今日も元気？', 
             'actions' => [
                 [ 'type' => 'message', 'label' => '元気です', 'text' => '元気です' ],
                 [ 'type' => 'message', 'label' => 'まあまあです', 'text' => 'まあまあです' ], 
@@ -84,7 +84,41 @@ if ($message->{"text"} == '確認') {
                 ] 
             ] 
     ];
- } else {
+ }elseif ($message->{"text"} == 'カツドン') {
+    // カツドン紹介メッセージ 
+    $messageData = [ 
+        'type' => 'template',
+         'altText' => 'ボタン', 
+        'template' => [
+             'type' => 'buttons',
+             'title' => 'タイトルです',
+             'text' => '宮城県仙台市泉区虹の丘2-6-13在住の31歳無職童貞YouTuberカツドン（本名は浅野）のことがもっと知りたい方はこちら！', 
+            'actions' => [
+                [
+                    'type' => 'uri',
+                    'label' => 'カツドンチャンネル@wiki', 
+                    'uri' => 'https://www65.atwiki.jp/katudonchannel/pages/15.html' 
+                ],
+                 [
+                     'type' => 'uri',
+                     'label' => 'カツドンチャンネル破壊動画集', 
+                     'uri' => 'https://www.youtube.com/watch?v=8NgJE3cMLcY' 
+                 ]
+              ]
+          ] 
+     ]; 
+ } elseif ($message->{"text"} == '写真') {
+     //カツドン写真集
+　  $messageData = [
+    'type' ==> 'image',
+    'originalContentUrl' ==> 'https://i.ytimg.com/vi/aPMy0sBZct4/hqdefault.jpg'
+    'previewImageUrl' ==> 'https://i.ytimg.com/vi/aPMy0sBZct4/hqdefault.jpg'
+    ],
+    ['type' ==> 'image',
+'originalContentUrl' ==> 'https://i1.wp.com/reinoare-curation.com/wp-content/uploads/2018/04/%E3%82%AB%E3%83%84%E3%83%89%E3%83%B3%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB-6.jpg'
+'previewImageUrl' ==> 'https://i1.wp.com/reinoare-curation.com/wp-content/uploads/2018/04/%E3%82%AB%E3%83%84%E3%83%89%E3%83%B3%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB-6.jpg'
+    ]
+    }   else {
      // それ以外は送られてきたテキストをオウム返し
      $messageData = [ 'type' => 'text', 'text' => $message->{"text"} ]; 
 } 
