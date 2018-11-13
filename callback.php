@@ -114,10 +114,6 @@ if ($message->{"text"} == 'あいさつ') {
     'originalContentUrl' ==> 'https://i.ytimg.com/vi/aPMy0sBZct4/hqdefault.jpg'
     'previewImageUrl' ==> 'https://i.ytimg.com/vi/aPMy0sBZct4/hqdefault.jpg'
     ],
-    ['type' ==> 'image',
-'originalContentUrl' ==> 'https://i1.wp.com/reinoare-curation.com/wp-content/uploads/2018/04/%E3%82%AB%E3%83%84%E3%83%89%E3%83%B3%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB-6.jpg'
-'previewImageUrl' ==> 'https://i1.wp.com/reinoare-curation.com/wp-content/uploads/2018/04/%E3%82%AB%E3%83%84%E3%83%89%E3%83%B3%E3%83%81%E3%83%A3%E3%83%B3%E3%83%8D%E3%83%AB-6.jpg'
-    ]
     }   else {
      // それ以外は送られてきたテキストをオウム返し
      $messageData = [ 'type' => 'text', 'text' => $message->{"text"} ]; 
