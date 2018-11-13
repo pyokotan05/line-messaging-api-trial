@@ -35,7 +35,7 @@ if ($message->{"text"} == 'あいさつ') {
                 ],
                  [
                      'type' => 'uri',
-                     'label' => 'googleへ移動', 
+                     'label' => 'google', 
                      'uri' => 'https://google.com' 
                  ]
               ]
@@ -113,7 +113,7 @@ if ($message->{"text"} == 'あいさつ') {
     'type' ==> 'image',
     'originalContentUrl' ==> 'https://i.ytimg.com/vi/aPMy0sBZct4/hqdefault.jpg'
     'previewImageUrl' ==> 'https://i.ytimg.com/vi/aPMy0sBZct4/hqdefault.jpg'
-    ],
+];
     }   else {
      // それ以外は送られてきたテキストをオウム返し
      $messageData = [ 'type' => 'text', 'text' => $message->{"text"} ]; 
